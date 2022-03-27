@@ -22,3 +22,38 @@ for d in data:
 		new.append(d)
 print('一共有', len(new), '筆留言長度小於100')
 print(new[0])
+
+good = []
+for d in data:
+	if 'good' in d:
+		good.append(d)
+print('一共有', len(good), '筆留言提到good')
+print(good[0])
+
+# 文字計數
+wc = {} # word_count
+for d in data:
+	words = d.split() # split預設就是空白鍵
+	for word in words:
+		if word in wc:
+			wc[word] += 1
+		else:
+			wc[word] = 1 # 新增地餓key進wc字典
+
+for word in wc:
+	if wc[word] > 1000000:
+		print(word, wc[word])
+
+print(len(wc))
+	
+while True:
+	word = input('請問你想查什麼字：')
+	if word == 'q':
+		break
+	if word in wc:
+		print(word, '出現過的次數為', wc[word])
+	else:
+		print(word, '沒有出現過')
+print('感謝使用本查詢功能！')
+	
+
