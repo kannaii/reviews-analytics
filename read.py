@@ -38,7 +38,7 @@ for d in data:
 		if word in wc:
 			wc[word] += 1
 		else:
-			wc[word] = 1 # 新增地餓key進wc字典
+			wc[word] = 1 # 新增新的key進wc字典
 
 for word in wc:
 	if wc[word] > 1000000:
